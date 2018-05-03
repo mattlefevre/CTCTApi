@@ -1,3 +1,5 @@
+import os
+
 class CtctAPI(object):
     """
     A class that instantiates the base information needed to access the Constant Contact API.
@@ -16,10 +18,10 @@ class CtctAPI(object):
         TODO: Update the api_key, api_secret, api_access_token to call to a system location,
         TODO: rather than typing out the actual values.
         """
-        self.api_key = 'vagn2zuayrgrgq3ejbun6rnt'
-        self.api_secret = '6Q9yNDHeZX6kFChgmWDzDSsJ'
+        self.api_key = os.environ.get('ctct_api_key')
+        self.api_secret = os.environ.get('ctct_api_secret')
+        self.api_access_token = os.environ.get('ctct_api_token')
         self.api_base_url = 'https://api.constantcontact.com/v2'
-        self.api_access_token = '91575fc0-ae2d-468a-b4b0-c7f47bebca55'
         self.request_headers = {
             'Authorization': 'Bearer {}'.format(self.api_access_token),
             'redirect_uri': 'http://localhost',
