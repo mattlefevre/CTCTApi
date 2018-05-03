@@ -1,7 +1,6 @@
 import json
 import requests
-from ctctapitest.ctct_api_base import CtctAPI
-from ctctapitest.ctct_lists import CTCTLists
+from ctct_api_base import CtctAPI
 
 
 class CTCTContacts(CtctAPI):
@@ -167,3 +166,6 @@ class CTCTContacts(CtctAPI):
 
 
 contact_test = CTCTContacts()
+
+
+print(contact_test.get_contact_info())
